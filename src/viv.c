@@ -991,7 +991,7 @@ _viv_default_key_t _viv_default_keys[] =
 	{VIV_ID_VIEW_ZOOM_OUT,CONFIG_KEYFLAG_CTRL | VK_SUBTRACT},
 	{VIV_ID_VIEW_ZOOM_RESET,CONFIG_KEYFLAG_CTRL | '0'},
 	{VIV_ID_VIEW_ONTOP_ALWAYS,CONFIG_KEYFLAG_CTRL | 'T'},
-	{VIV_ID_VIEW_OPTIONS,'O'},
+	{VIV_ID_VIEW_OPTIONS,CONFIG_KEYFLAG_ALT | 'K'},
 	{VIV_ID_VIEW_REFRESH,VK_F5},
 	{VIV_ID_SLIDESHOW_PAUSE,VK_SPACE},
 	{VIV_ID_SLIDESHOW_RATE_DEC,VK_DOWN},
@@ -8215,9 +8215,9 @@ static INT_PTR CALLBACK _viv_options_view_proc(HWND hwnd,UINT msg,WPARAM wParam,
 				ComboBox_SetCurSel(GetDlgItem(hwnd,IDC_COMBO2),0);
 			}
 
-			os_ComboBox_AddString(hwnd,IDC_TITLE_BAR_FORMAT,(const utf8_t *)"Full Path");
-			os_ComboBox_AddString(hwnd,IDC_TITLE_BAR_FORMAT,(const utf8_t *)"Filename Only");
-			os_ComboBox_AddString(hwnd,IDC_TITLE_BAR_FORMAT,(const utf8_t *)"None");
+			os_ComboBox_AddString(hwnd,IDC_TITLE_BAR_FORMAT,(const utf8_t *)"文件完整路径");
+			os_ComboBox_AddString(hwnd,IDC_TITLE_BAR_FORMAT,(const utf8_t *)"只显示文件名");
+			os_ComboBox_AddString(hwnd,IDC_TITLE_BAR_FORMAT,(const utf8_t *)"无");
 			ComboBox_SetCurSel(GetDlgItem(hwnd,IDC_TITLE_BAR_FORMAT),config_title_bar_format);
 					
 			CheckDlgButton(hwnd,IDC_AUTO_ZOOM,config_auto_zoom ? BST_CHECKED : BST_UNCHECKED);
